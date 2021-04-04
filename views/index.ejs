@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourmet</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/png" href="/images/logoGourmet.png"/>
+
+  </head>
+  <body>
+ 
+    <div class="container-fluid">
+      <%- include('navbar'); %>
+
+      <!-- banner -->
+      <div class="row">
+        <div class="col-12">
+            <div class="banner">
+              <!-- Navbar -->
+              <div class="textBanner">
+                <h1 class="textWhite">Welcome to Codehouse Academy´s Restaurant</h1>
+                <br>
+                <button type="button" class="btn btn-danger textWhite rounded-pill">MAKE A RESERVATION</button>
+              </div>
+            </div>
+        </div>
+      </div>
+  
+          <!-- About us -->
+
+      <div class="row center">
+          <div class="col-12  textRed padding-top">
+            <h2>ABOUT US</h2>
+          </div>
+      </div>
+
+      <div class="row spaceBtw">
+        <div class="col-12 col-sm-12 col-md-5 col-lg-5 center ">
+        <img class="whoPic" src="/images/who.jpg" alt="">
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-5 col-lg-5 center textWhite">
+          <h4 class="textRed">We make magic...</h4>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate atque sit sapiente, placeat sed nihil. Laboriosam earum ad atque cum eos voluptatem inventore, veniam quos.</p>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas tempore laudantium incidunt numquam voluptatem harum, deserunt esse, sed impedit omnis reiciendis similique asperiores. Eveniet sed, voluptatibus quo qui, libero quod quam est, maiores consequuntur aspernatur soluta facilis impedit dolorem aut.</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor, exercitationem officiis. Neque, alias quaerat! Beatae consequuntur nam rerum adipisci praesentium ipsa earum similique error fuga quidem! Facere cum quibusdam veniam.</p>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis nostrum corporis numquam. Soluta eius dolorum nam, molestiae consectetur quaerat labore nihil, blanditiis et expedita quis.</p>
+          <br>
+          <button type="button" class="btn btn-outline-danger textWhite rounded-pill">BOOK A TABLE</button>
+        </div>
+      </div>
+
+    <!-- our talents -->
+
+      <div class="row">
+        <div class="col-12 center textRed">
+          <h3>OUR TALENTS</h3>
+        </div>
+      </div>
+
+      <!-- Cards chefs -->
+      <div class="row padding-top">
+          <% results.forEach(function(chef){ %>
+          <div class="col-12 col-sm-12 col-md-6 col-lg-3 card-direction" >
+            <div class="card card_chef card-bkg">
+              <img src="/images/<%-  chef.photo  %>" class="card-img-top card_image_chef" alt="...">
+              <div class="card-body textWhite">
+                <h5 class="card-title"><%-  chef.chef_name  %> <%-  chef.chef_last_name  %></h5>
+                <p class="card-text"><%-  chef.chef_description  %></p>
+                <a href="/chef/delete/<%-  chef.id_chef  %>" class="btn btn-outline-danger">Delete</a>
+                <a href="/chef/id/<%-  chef.id_chef  %>" class="btn btn-outline-success">Go to chef profile</a>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+      </div>
+    
+    
+      
+      <div class="row">
+        <div class="col-12">
+          <h2 class="textWhite center padding-top textRed">OUR LOVELY FOOD GALLERY</h2>
+        </div>
+      </div>
+      <div class="row padding-top">
+        <% resultDish.forEach(function(dish){ %>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-2 card-direction">
+          <div class="card card_chef card-bkg-trans" style="width: 18rem;">
+            <img src="/images/<%-  dish.dish_image  %>" class="card-img-top dish_hover" alt="...">
+            <div class="card-body textWhite">
+              <h5 class="card-title"><%-  dish.dish_name  %></h5>
+              <a href="/chef/id/<%-  dish.id_chef  %>" class="btn btn-outline-danger">Details</a>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    
+      <div class="row">
+        <div class="col-12">
+          <%- include('form'); %>
+        </div>
+      </div>
+
+
+    <!-- cierre container-fluid -->
+    </div>
+
+
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+      integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+      crossorigin="anonymous"></script>
+
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                  <!-- Navbar -->
+                  <%- include('navbar'); %>
+                </div>
+            </div>
+    
+        <div class="row padding-top ">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 ">
+                <div class="jumbotron jumbo textWhite center">
+                    <h1 class="display-4"><%- resultChef[0].chef_name %> <%- resultChef[0].chef_last_name %></h1>
+                    <p class="textRed"><%- resultChef[0].chef_description %></p>
+                    <img class="whoPic" src="/images/<%- resultChef[0].photo %>" alt="">
+                </div>
+            </div>
+        </div>
+    
+        <div class="row">
+                <% if(resultDish.length==0){%>
+                    <div class="col-12 card-direction">
+                        <p class="textRed">No dishes uploaded yet, please add one <a href="/dish/create">here</a></p>       
+                    </div>
+                <% } %>
+                <% resultDish.forEach(function(dish){ %>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 card-direction">
+                        <div class="card card_chef card-bkg">
+                            <img src="/images/<%-  dish.dish_image  %>" class="card-img-top" alt="...">
+                            <div class="card-body textWhite text-center">
+                                <h5 class="card-title"><%- dish.dish_name %></h5>
+                                <p class="card-text"><%- dish.dish_description %></p>
+                            <!-- Sending a second param "resultChef[0].id_chef" in order to do the res.redirect to it´s own chef profile in the delete method-->
+                            <a href="/dish/delete/<%-  dish.id_dish  %>/<%- resultChef[0].id_chef %>" class="btn btn-outline-danger">Delete</a>
+                                <a href="/dish/edit/<%-  dish.id_dish  %>" class="btn btn-outline-warning">Edit</a>
+                            </div>
+                        </div>  
+                    </div>
+                <% }) %> 
+            
+        </div>
+
+        <div class="row padding-top">
+            <div class="col-12">
+              <%- include('footer'); %>
+            </div>
+          </div>   
+
+
+    <!-- cierre container-fluid -->
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

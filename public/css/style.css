@@ -1,0 +1,132 @@
+body{
+  background-image: url('/images/wallpaper2.gif');
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.banner{
+  margin-top: -7vh;
+  background-image: url("/images/banner1.jpg");
+  height: 80vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.textBanner{
+  padding-top: 35vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center; 
+}
+.navbar-bg{
+  background-color: #07070788;
+}
+.nav{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  position: fixed !important;
+  z-index: 999;
+}
+.textWhite{
+  color: white !important;
+}
+.textGreen{
+  color: green !important;
+}
+.textRed{
+  color: red !important;
+}
+.textGrey{
+  color: lightgray !important;
+}
+.text-center{
+  text-align: center;
+}
+.padding-top{
+  padding-top: 7vh;
+}
+.margin-pot{
+  margin-top: -20vh;
+}
+.spaceBtw{
+  display: flex;
+  justify-content: space-evenly;
+}
+.spaceCenter{
+  display: flex;
+  justify-content: center;
+}
+.whoPic{
+  max-width: 100%;
+  min-width: 50%;
+}
+.dishPic{
+  max-width: 50%;
+  min-width: 25%;
+}
+.center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 10vh;
+}
+.card-direction{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: -7vh;
+}
+.card-direction-center{
+  display: flex;
+  justify-content: center;
+  margin-top: -7vh;
+}
+.card_chef{
+  width: 100%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 10vh;
+}
+.card_image_chef{
+  background-image: url('/images/fire1.gif');
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.card_image_chef:hover{
+  width: 50vh;
+}
+.card-bkg{
+  background-color: transparent !important;
+  border-color: red !important;
+}
+.card-bkg-trans{
+  background-color: transparent !important;
+}
+.dish_hover:hover{
+  width: 35vh;
+}
+.jumbo{
+  background-color: transparent !important;
+  height: 88%;
+  margin-top: -7vh;
+}
+.dishSize{
+  width: 40vh;
+}
+.footerText{
+  color: white!important;
+  text-align: right;
+  padding-top: 4vh;
+  padding-right: 2vh;
+}
+.footerBg1{
+  /* background-color: #6e3a3a88; */
+  background-color: rgba(255, 0, 0, 0.521);
+  height: 10vh;
+}
